@@ -1,0 +1,14 @@
+<form class="col-lg-6" name="frmLogin" ng-submit="valider()"> <!-- Permet d'appeler la fonction Valider qui se trouve dans js/controller/controller.js -->
+    <div class="form-group">
+        <label for="login">{{::lblLogin}}</label> <!-- Permet de récupérerle nom qu'on a définit dans js/controller/controller.js -->
+        <input type="text" ng-model="login" class="form-control" /> <!-- Ceci permet d'envoyer la donnée login (ajout de ng-model="login" ) -->
+        {{login}} <!-- Ceci permet de récupérer la donnée ng-model="login" donc ici va afficher ce qu'on tape juste dessous -->
+    </div>
+    <div class="form-group">
+        <label for="mdp">{{::lblMdp}}</label>
+        <input type="password" ng-model="mdp" class="form-control" />
+    </div>
+	<div class="alert alert-danger"  ng-show="msgErreur">{{::lblMessage}}</div>
+    <input type="submit" value="{{::lblBtn}}" >
+</form>
+<div ng-include src = "'vues/logo.html'" ></div> <!-- Ceci va nous permettre d'afficher l'image (le logo GSB) -->
